@@ -93,7 +93,7 @@ export const webinars = [
   {
     title: 'Genereaza primele tale 1000 de vânzări pe Emag, cu ajutorul Profitway.',
     id: 'webinar-emag',
-    image: require('@/assets/images/webinars/1-2.jpg')
+    image: require('@/assets/images/webinars/Fara-titlu-1300-x-1000-px.png')
   },
 ]
 

@@ -115,7 +115,7 @@ export default function RootLayout() {
           <Stack.Screen 
             name='AuthentificationStack'
             options={{ 
-              headerStyle: {backgroundColor: 'transparent'}, 
+              headerStyle: {backgroundColor: Platform.OS === 'android' ? 'black' : 'transparent' }, 
               headerShadowVisible: false,
               title: '', 
               presentation: 'fullScreenModal',

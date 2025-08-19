@@ -1,8 +1,9 @@
 {
   "expo": {
-    "name": "profitway",
+    "name": "Profitway Academy",
     "slug": "profitway",
-    "version": "1.0.0",
+    "owner": "andreirhadu",
+    "version": "1.0.3",
     "orientation": "portrait",
     "icon": "./assets/images/icon-profitway.png",
     "scheme": "profitway",
@@ -18,9 +19,11 @@
       }
     },
     "android": {
+      "package": "com.profitway.profitway",
+      "googleServicesFile": "./google-services.json",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#000"
       },
       "edgeToEdgeEnabled": true
     },
@@ -36,24 +39,15 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
+          "image": "./assets/images/logo-freeway.png",
           "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#000"
         }
       ],
       "expo-web-browser",
       "expo-secure-store",
-      "expo-font",
-      [
-        "expo-splash-screen",
-        {
-          "backgroundColor": "#000",
-          "image": "./assets/images/logo-freeway.png",
-          "resizeMode": "contain",
-          "imageWidth": 200
-        }
-      ]
+      "expo-font"
     ],
     "experiments": {
       "typedRoutes": true
@@ -63,6 +57,12 @@
       "eas": {
         "projectId": "c73fa73f-a7fb-4456-997a-ebe9b9846dff"
       }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/c73fa73f-a7fb-4456-997a-ebe9b9846dff"
     }
   }
 }

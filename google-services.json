@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "207153851242",
+    "project_id": "profitway-academy",
+    "storage_bucket": "profitway-academy.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:207153851242:android:11f887d28266e3d3425313",
+        "android_client_info": {
+          "package_name": "com.profitway.profitway"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeY6FNXxxoALzs4Q1mHzLjFdP3WItgncQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
