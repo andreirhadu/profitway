@@ -13,6 +13,7 @@ const Register = () => {
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [password, setPassword] = useState('')
+  const [phone, setPhone] = useState('')
   const [verifyPassword, setVerifyPassword] = useState('')
   const [loading, setLoading] = useState(false)
   const [acceptsMarketing, setAcceptsMarketing] = useState(false)
@@ -29,7 +30,7 @@ const Register = () => {
     }
 
     try {
-      await registerWithCredentials(firstName, lastName, email, password, acceptsMarketing)
+      await registerWithCredentials(firstName, lastName, email, password, phone, acceptsMarketing)
       router.back()
     } catch (error: any) {
       if ( typeof error.message === 'string' ) {
@@ -93,6 +94,16 @@ const Register = () => {
             onChangeText={(text: string) => setEmail(text)}
             autoCapitalize='none'
             value={email}
+            onFocus={() => Platform.OS === 'android' && scrollRef.current!.scrollTo({y: 280, animated: true})}
+          />
+          <TextInput 
+            placeholder='Telefon'
+            placeholderTextColor={Colors.dark.disabledText}
+            keyboardType='number-pad'
+            style={styles.input}
+            onChangeText={(text: string) => setPhone(text)}
+            autoCapitalize='none'
+            value={phone}
             onFocus={() => Platform.OS === 'android' && scrollRef.current!.scrollTo({y: 280, animated: true})}
           />
           <TextInput 

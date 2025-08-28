@@ -6,7 +6,7 @@ type AuthContextType = {
   user: any
   token: any
   loginWithCredentials: (email: string, password: string) => Promise<unknown>
-  registerWithCredentials: (firstName: string, lastName: string, email: string, password: string, acceptsMarketing: boolean) => Promise<unknown>
+  registerWithCredentials: (firstName: string, lastName: string, email: string, password: string, phone: string, acceptsMarketing: boolean) => Promise<unknown>
   signout: () => Promise<void>
   setUser: React.Dispatch<any>
 }
@@ -53,6 +53,7 @@ export const AuthProvider = ({ children }: Props) => {
     lastName: string,
     email: string,
     password: string,
+    phone: string,
     acceptsMarketing: boolean
   ) => {
     return new Promise(async (resolve, reject) => {
@@ -85,6 +86,20 @@ export const AuthProvider = ({ children }: Props) => {
             Authorization: `Bearer ${token}`
           }
         })
+
+        try {
+          const formData = new URLSearchParams()
+          formData.append('name', `${firstName} ${lastName}(inregistrare in aplicatie)`)
+          formData.append('email', email)
+          formData.append('phonenumber', phone)
+          formData.append('key', '9f2a45443b7c7043ece56fd4ec660996')
+
+          await axios.post('https://trb.meficrm.com/forms/wtl/9f2a45443b7c7043ece56fd4ec660996', formData, {
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded'
+            }
+          })
+        } catch {}
   
         setUser(userRes.data)
         await SecureStore.setItemAsync("authToken", token)

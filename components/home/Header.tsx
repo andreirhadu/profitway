@@ -4,6 +4,8 @@ import { Image } from 'expo-image'
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
+const HEADER_HEIGHT = 600
+
 const Header = () => {
   return (
     <View style={styles.imageWrapper}>
@@ -36,12 +38,12 @@ const styles = StyleSheet.create({
   imageWrapper: {
     position: 'relative',
     width: '100%',
-    height: 500, // same as HEADER_HEIGHT
+    height: HEADER_HEIGHT,
     overflow: 'hidden',
   },
   image: {
-    height: 500,
-    width: 500 * 1.51,
+    height: HEADER_HEIGHT,
+    width: HEADER_HEIGHT * 1.51,
     position: 'absolute',
     bottom: 0,
     left: '50%',
@@ -80,8 +82,8 @@ const styles = StyleSheet.create({
     textShadowRadius: 4,
   },
   logo: {
-    width: 128,
-    height: 128,
-    marginBottom: 20
+    width: 256,
+    height: 256,
+    marginBottom: 0
   }
 })
